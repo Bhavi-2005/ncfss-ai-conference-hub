@@ -31,10 +31,10 @@ const Register = () => {
     transactionId: "",
   });
 
-  const [members, setMembers] = useState([""]);
+  const [members, setMembers] = useState<string[]>([]);
 
   const addMember = () => {
-    if (members.length < 4) setMembers([...members, ""]);
+    if (members.length < 3) setMembers([...members, ""]);
   };
 
   const removeMember = (index: number) => {

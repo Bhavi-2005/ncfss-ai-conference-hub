@@ -31,10 +31,10 @@ const Register = () => {
     transactionId: "",
   });
 
-  const [members, setMembers] = useState([""]);
+  const [members, setMembers] = useState<string[]>([]);
 
   const addMember = () => {
-    if (members.length < 4) setMembers([...members, ""]);
+    if (members.length < 3) setMembers([...members, ""]);
   };
 
   const removeMember = (index: number) => {
@@ -169,7 +169,7 @@ const Register = () => {
 
           {/* Group Members */}
           <div>
-            <label className={labelClass}>Group Members (Max 4)</label>
+            <label className={labelClass}>Additional Group Members (Max 3, excluding yourself)</label>
             <div className="space-y-3">
               {members.map((member, index) => (
                 <div key={index} className="flex gap-2">
@@ -191,7 +191,7 @@ const Register = () => {
                   )}
                 </div>
               ))}
-              {members.length < 4 && (
+              {members.length < 3 && (
                 <button
                   type="button"
                   onClick={addMember}

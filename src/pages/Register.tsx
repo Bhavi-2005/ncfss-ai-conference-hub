@@ -89,6 +89,32 @@ const Register = () => {
             />
           </div>
 
+          {/* Email */}
+          <div>
+            <label className={labelClass}>Email *</label>
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              placeholder="Enter your email address"
+              className={inputClass}
+            />
+          </div>
+
+          {/* Phone Number */}
+          <div>
+            <label className={labelClass}>Phone Number *</label>
+            <input
+              type="tel"
+              name="phone"
+              value={form.phone}
+              onChange={handleChange}
+              placeholder="Enter your phone number"
+              className={inputClass}
+            />
+          </div>
+
           {/* Department */}
           <div>
             <label className={labelClass}>Department *</label>

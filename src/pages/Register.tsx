@@ -191,7 +191,7 @@ const Register = () => {
                   )}
                 </div>
               ))}
-              {members.length < 4 && (
+              {members.length < 3 && (
                 <button
                   type="button"
                   onClick={addMember}

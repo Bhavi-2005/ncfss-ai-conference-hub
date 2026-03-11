@@ -167,7 +167,42 @@ const Register = () => {
             </select>
           </div>
 
-          {/* Abstract Upload */}
+          {/* Group Members */}
+          <div>
+            <label className={labelClass}>Group Members (Max 4)</label>
+            <div className="space-y-3">
+              {members.map((member, index) => (
+                <div key={index} className="flex gap-2">
+                  <input
+                    type="text"
+                    value={member}
+                    onChange={(e) => updateMember(index, e.target.value)}
+                    placeholder={`Member ${index + 1} name`}
+                    className={inputClass}
+                  />
+                  {members.length > 1 && (
+                    <button
+                      type="button"
+                      onClick={() => removeMember(index)}
+                      className="shrink-0 rounded-xl border border-border bg-secondary px-3 py-2 text-sm text-muted-foreground hover:bg-destructive/10 hover:text-destructive transition-colors"
+                    >
+                      ✕
+                    </button>
+                  )}
+                </div>
+              ))}
+              {members.length < 4 && (
+                <button
+                  type="button"
+                  onClick={addMember}
+                  className="text-sm text-primary hover:underline"
+                >
+                  + Add Member
+                </button>
+              )}
+            </div>
+          </div>
+
           <div>
             <label className={labelClass}>Upload Abstract (PDF / DOC)</label>
             <input

@@ -22,12 +22,30 @@ const paperTopics = [
 const Register = () => {
   const [form, setForm] = useState({
     name: "",
+    email: "",
+    phone: "",
     department: "",
     collegeName: "",
     yearOfStudy: "",
     paperTopic: "",
     transactionId: "",
   });
+
+  const [members, setMembers] = useState([""]);
+
+  const addMember = () => {
+    if (members.length < 4) setMembers([...members, ""]);
+  };
+
+  const removeMember = (index: number) => {
+    setMembers(members.filter((_, i) => i !== index));
+  };
+
+  const updateMember = (index: number, value: string) => {
+    const updated = [...members];
+    updated[index] = value;
+    setMembers(updated);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });

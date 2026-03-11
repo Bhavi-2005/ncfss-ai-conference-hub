@@ -53,7 +53,7 @@ const Register = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.name || !form.department || !form.collegeName || !form.yearOfStudy || !form.paperTopic) {
+    if (!form.name || !form.email || !form.phone || !form.department || !form.collegeName || !form.yearOfStudy || !form.paperTopic) {
       toast.error("Please fill in all required fields");
       return;
     }

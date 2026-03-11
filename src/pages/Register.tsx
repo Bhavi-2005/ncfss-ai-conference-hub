@@ -169,7 +169,7 @@ const Register = () => {
 
           {/* Group Members */}
           <div>
-            <label className={labelClass}>Group Members (Max 4)</label>
+            <label className={labelClass}>Additional Group Members (Max 3, excluding yourself)</label>
             <div className="space-y-3">
               {members.map((member, index) => (
                 <div key={index} className="flex gap-2">
